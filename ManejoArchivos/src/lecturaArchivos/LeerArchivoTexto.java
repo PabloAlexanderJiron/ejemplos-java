@@ -38,10 +38,11 @@ public class LeerArchivoTexto {
         {
             while (entrada.hasNext()) {
                 String linea = entrada.nextLine();
-                // System.out.println(linea);
+                //System.out.println(linea);
                 ArrayList<String> linea_partes = new ArrayList<String>(Arrays.asList(linea.split(";")));
-                System.out.println(linea_partes);
+                System.out.println(linea_partes.get(0));//.get(0) paraimprimir el numero del elemento en la posicion 0
 
+                
             } // fin de while
         } // fin de try
         catch (NoSuchElementException elementException) {
