@@ -35,20 +35,22 @@ public class LecturaArchivo {
 
         try // lee registros del archivo, usando el objeto Scanner
         {
+                       double prom = 0;
+            double suma = 0;
+            double prom_final = 0;
             while (entrada.hasNext()) {
                 String linea = entrada.nextLine();
                 //System.out.println(linea);
                 ArrayList<String> linea_partes = new ArrayList<String>(Arrays.asList(linea.split(";")));
-                System.out.println(linea_partes.get(2)+";"+ linea_partes.get(3));//.get(0) paraimprimir el numero del elemento en la posicion 0
-                
-                int promedio =Integer.parseInt(linea_partes.get(2)+ linea_partes.get(3))/2;
-                int array []=new int[4];
-                
-                for (int i=0; i<=array.length;i++);
-                System.out.println("la suma es"+promedio);
-                
-                
-            } // fin de while
+                 System.out.println(linea_partes);
+                suma = (Integer.parseInt(linea_partes.get(2)) + Integer.parseInt(linea_partes.get(3)));
+                prom = suma / 2;
+                System.out.printf("Promedio de %s es: %.2f\n", linea_partes.get(0), prom);
+                if (prom >= prom_final) {
+                    prom_final = prom;
+                }
+            }//fin de while
+            System.out.printf("El mejor promedio es: %.2f\n", prom_final);
         } // fin de try
         catch (NoSuchElementException elementException) {
             System.err.println("El archivo no esta bien formado.");
